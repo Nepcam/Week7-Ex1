@@ -83,7 +83,7 @@ namespace PracTest2
             for (int i = 0; i <= MAX_BOARD_SIZE; i++)
             {
                 //IF(row num + col num) % 2 == 0 THEN
-                if ()
+                if () // Working on this statement
                 {
                     //Call DrawSquare with LightBrown colour
                     DrawSquare(canvas1, xpos, ypos, WIDTH, HEIGHT, LightBrown);
