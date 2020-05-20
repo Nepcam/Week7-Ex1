@@ -59,10 +59,12 @@ namespace PracTest2
             Graphics canvas = pictureBoxDisplay.CreateGraphics();
             int xpos = 0;
             int ypos = 0;
+            int rowNum = 0; //int.Parse(toolStripTextBox1.Text);
 
-            DrawSquare(canvas, xpos, ypos, WIDTH, HEIGHT, DarkBrown);
+            //DrawSquare(canvas, xpos, ypos, WIDTH, HEIGHT, DarkBrown);
             //xpos += WIDTH;
             //DrawSquare(canvas, xpos, ypos, WIDTH, HEIGHT, LightBrown);
+            DrawRow(canvas, MAX_BOARD_SIZE, rowNum, ypos);
         }
 
         /// <summary>
@@ -70,29 +72,31 @@ namespace PracTest2
         /// </summary>
         /// <param name="paper">Where to draw the graphics</param>
         /// <param name="boardSize">Size of board</param>
-        /// <param name="rowNum">Current row number</param>
+        /// <param name="currentRowNum">Current row number</param>
         /// <param name="y">The y position of the top left corner</param>
-        private void DrawRow(Graphics paper, int boardSize, int rowNum, int y)
+        private void DrawRow(Graphics canvas, int boardSize, int currentRowNum, int y)
         {
             //Declare variables
-            Graphics canvas1 = pictureBoxDisplay.CreateGraphics();
+            //Graphics canvas1 = pictureBoxDisplay.CreateGraphics();
             int xpos = 0;
             int ypos = 0;
+            //GET number of squares 
+            int rowNum = int.Parse(toolStripTextBox1.Text);
+            int colNum = 0;
 
             //FOR each column to draw
             for (int i = 0; i <= MAX_BOARD_SIZE; i++)
             {
                 //IF(row num + col num) % 2 == 0 THEN
-                if () // Working on this statement
+                if ((rowNum + colNum) % 2 == 0) // Working on this statement
                 {
                     //Call DrawSquare with LightBrown colour
-                    DrawSquare(canvas1, xpos, ypos, WIDTH, HEIGHT, LightBrown);
-                }                  
-                //ELSE
+                    DrawSquare(canvas, xpos, ypos, WIDTH, HEIGHT, LightBrown);
+                }
                 else
                 {
                     //Call DrawSquare with DarkBrown colour
-                    DrawSquare(canvas1, xpos, ypos, WIDTH, HEIGHT, DarkBrown);
+                    DrawSquare(canvas, xpos, ypos, WIDTH, HEIGHT, DarkBrown);
                 }
                 //ENDIF
                 //Shift x to the right by width of square
