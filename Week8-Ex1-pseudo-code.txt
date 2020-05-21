@@ -1,0 +1,25 @@
+//DRAWSQUARE-Method 
+   CREATE brush to fill square and pen to draw the outline of the square
+   DRAW the square
+//ENDDRAWSQUARE-METHOD
+
+//DRAWBOARD-METHOD
+   DECLARE VARIABLES
+   CREATE a display to draw on
+   GET y position
+   GET size of board from user
+   DRAW the square
+   DRAW the row of squares and loop over
+//ENDDRAWBOARD-METHOD
+
+//DRAWROW-METHOD
+   DECLARE VARIABLES
+   DRAW row 
+      FOR (column number < board size)
+         IF ((row number + column number) % 2 == 0) 
+            DRAW square with lightbrown color
+         ELSE
+            DRAW square with darkbrown color
+         ENDELSE
+      ENDFOR
+//ENDDRAWROW-METHOD
