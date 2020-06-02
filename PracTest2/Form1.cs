@@ -58,15 +58,32 @@ namespace PracTest2
             Graphics canvas = pictureBoxDisplay.CreateGraphics();
             //int xpos = 0;
             int ypos = 0;
-            //GET number of squares 
-            int colNum = int.Parse(toolStripTextBox1.Text);
+           
 
-            //DrawSquare(canvas, xpos, ypos, WIDTH, HEIGHT, LightBrown); Test DrawSquare() 
-            for (int rowNum = 0; rowNum < colNum; rowNum++)
+            try
             {
-                DrawRow(canvas, colNum, rowNum, ypos);
-                ypos += HEIGHT;
+                //GET number of squares 
+                int colNum = int.Parse(toolStripTextBox1.Text);
+
+                if (colNum <= MAX_BOARD_SIZE && colNum >= MIN_BOARD_SIZE)
+                {
+                    //DrawSquare(canvas, xpos, ypos, WIDTH, HEIGHT, LightBrown); Test DrawSquare() 
+                    for (int rowNum = 0; rowNum < colNum; rowNum++)
+                    {
+                        DrawRow(canvas, colNum, rowNum, ypos);
+                        ypos += HEIGHT;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a number between 2 - 10");
+                }
+               
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
         }
 
         /// <summary>
